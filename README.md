@@ -1,10 +1,10 @@
-# CSCI 1302 - Phased List (Phase 1) v2021.sp
+# CSCI 1302 - Phased List (Phase 2) v2021.sp
 
 ![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
-This document contains the description for Phase 1 of the List ADT 
+This document contains the description for Phase 2 of the List ADT 
 project assigned to the students in the Spring 2021 CSCI 1302 classes
 at the University of Georgia.
 
@@ -15,9 +15,9 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The 
 late penalty does not start applying until after the final date listed. 
 
-* **FRI 2021-03-12 (Mar 12) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2021-03-13 (Mar 13) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **SUN 2021-03-14 (Mar 14) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **WED 2021-03-24 (Mar 24) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **THU 2021-03-25 (Mar 25) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **FRI 2021-03-26 (Mar 26) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
 
