@@ -318,10 +318,10 @@ On Odin, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
 
 ```
-$ git clone --depth 1 https://github.com/cs1302uga/cs1302-phased-list.git
+$ git clone --depth 1 https://github.com/cs1302uga/cs1302-phased-list2.git
 ```
 
-This should create a directory called `cs1302-phased-list` in
+This should create a directory called `cs1302-phased-list2` in
 your present working directory that contains a clone of the 
 project's respository. Take a look around.
 
@@ -429,17 +429,17 @@ read the entire project description, including the [FAQ](#appendix---faq).
 These steps are suggesions and, therefore, do not constitute an exhaustive list 
 of steps that you may need to take to complete the project. 
 
-1. Preparation (Suggested Deadline: Wednesday, Mar 3rd):
+1. Preparation:
 
    - [ ] Read through the entire project description, including the appendices, 
          **and write down questions as you go**.
-   - [ ] Read through the entire [API Documentation for `StringList`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html),
+   - [ ] Read through the entire [API Documentation for `FancyStringList`](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/2/cs1302/adt/package-summary.html),
          **and write down questions as you go**. 
 	 * Be sure to read both the summary comment for each method and its detailed
 	   description (which can be reached by clicking on it). 
    - [ ] Read both of them again! This time, you may be able to answer some of your own questions.
    
-1. Before you write any code (Suggested Deadline: Wednesday, Mar 3rd):
+1. Before you write any code:
 
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what 
@@ -464,13 +464,13 @@ of steps that you may need to take to complete the project.
 	   start with in the next phase of your development. We'll call these the
 	   independent methods.
 	 
-1. Prepare to implement the methods (Suggested Deadline: Friday, Mar 5th):
+1. Prepare to implement the methods:
 
-   - [ ] Create the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
-         are in the correct package and all entities have the proper visibility. For each file:
-	 * Write the class signature (top-level declaration) and all of the method signatures (member-level declarations). Remember, in the child
-	   classes (`ArrayStringList` and `LinkedStringList`), you don't need to include method signatures for inherited methods that aren't overridden
-	   in the child classes.
+   - [ ] Update the `.java` files for each implementing class and the common parent (`BaseStringList`) and make sure all classes
+         are in the correct package and all entities have the proper visibility.
+	 * You can copy your files from phase 1 into your new directory as a starting point. Make sure and modify any interface/inheritance
+	   relationships to match the new UML diagram.
+	 * Add the new method signatures to the appropriate class based on the UML diagram for this phase.
 	 * In the body of each method, write the `throw` statement that is suggested
 	   in [the FAQ](#faq-uoe). **Do not attempt to actually implement the method yet.**
 	 * Run `checkstyle` to make sure that you're off to a good start, style-wise.
@@ -479,113 +479,27 @@ of steps that you may need to take to complete the project.
 	 * Make sure the files compile, even though they're not really implemented yet. We recommend making a compile script to simplify
 	   compilation in the future. This will make it easier to test/debug your code. 
 
-1. Start by implementing a few methods in `BaseStringList` (Suggested Deadline: Friday, Mar 5th).
-   - [ ] Begin with `size` and `isEmpty`. Since these methods are inherited by the children, we won't need to write 
-     them in `ArrayStringList` or `LinkedStringList`! If you've done the previous steps correctly, you should be able to run your compile
-     script to compile your project. Now, go ahead and create a class called `cs1302.p2.Driver` which contains the code below:
-          
-     ```java
-     
-     public static void main(String[] args) {
-        StringList sl = new ArrayStringList();
-
-        // Testing isEmpty on an empty list
-        if (sl.isEmpty()) {
-            System.out.println("isEmpty: Test Passed");
-        } else {
-            System.out.println("isEmpty: Test Failed");
-            System.exit(0);
-        } // if
-
-        // Testing size on an empty list
-        if (sl.size() == 0) {
-            System.out.println("size: Test Passed");
-        } else {
-            System.out.println("size: Test Failed");
-            System.exit(0);
-        } // if
-     } // main  
-     
-     ```
-     
-     If you've done everything properly so far, this should run and print two passing messages to the console. The code above contains two
-     possible test cases that we could run when grading your program. As you are working through other methods, you will want to add test 
-     cases in `Driver` to make sure those methods are working. In general, it is best to put each test case in its own method instead
-     of putting them all in `main`.
-
-     At this point, you should have the basic foundation for your program done including skeleton code, a compile script, and a good understanding
-     of what all of the methods do (and how they do them). The order in which you complete the other methods is up to you. However, we
-     recommend completing one of the child classes before continuing with `BaseStringList`.
-     
-1. Implement `ArrayStringList` (Suggested Deadline: Sunday, Mar 7th):
-   - [ ] Write the code for the default constructor. You will likely need to introduce 
-         instance variables into the class to keep track of object state.
-   - [ ] For each of the independent methods you identified earlier, attempt to
-         write them. You may need to introduce more instance variables, as needed, into 
-	 the class to keep track of object state.
+1. Implement the new methods in each class. In this phase, we will leave the exact order up to you.
+   - [ ] For each of the methods, attempt to write them.
 	 * Not only should you implement these methods, but **you should test them too**.
-	   Add code to your driver program that creates a list object, calls these methods, 
+	   Add code to your driver program that creates a list object, calls each methods, 
 	   and make sure that they work. When you create a test method, have the method
 	   perform it's test on a `StringList` instead of an `ArrayStringList`. That
 	   way, you'll know that it works from the perspective of the interface.
-	 * Run `checkstyle` to make sure that you're still good, style-wise.
-	 * Get a method to work? Go ahead and `git commit` what you have with a good
-	   log message. 
-   - [ ] Move on to a small set of methods that depend on the ones that you have
-         already implemented. Implement them, test them, and make sure your file
-	 passes `checkstyle`. 
 	 * When testing, you should rerun all previous tests and make sure they still
 	   work. This iterative process of testing code is sometimes called
 	   _regression testing_. You may need to go back and fix a bug in a method
 	   you have already written.
+         * Run `checkstyle` to make sure that you're still good, style-wise.
 	 * Don't forget to `git commit` whenever you get something to work.
-   - [ ] Repeat the last step until you have all methods implemented. If you take
-         these suggestions seriously, then you will be able to:
-	 * write less code for each method and over all;
-	 * identify and fix bugs faster;
-	 * not have to go back and fix as many style errors and/or comments; and
-	 * have a better understanding of how your class works.
-   - [ ] Write and test the copy constructor. You can very likely implement it
-         using some of your other methods.
+   - [ ] Repeat the last step until you have all methods implemented.
 
-1. Implement `LinkedStringList` (Suggested Deadline: Tuesday, Mar 9th): 
-
-   - [ ] Write the code for the default constructor. You will likely need to introduce 
-         instance variables into the class to keep track of object state. This
-	 class stores its elements internally in a way that is different from the other class.
-   - [ ] Follow the same steps outlined above for the first class.
-         * If possible, write and test one method at a time.
-         * When it comes time to write tests, **hold the front door!** You already
-	   wrote the tests. If your test methods operate on a `StringList`, then
-	   there is probably very little, if any, changes that you need to make
-	   in order to test the methods in this class.
-	 * Is this method implemented _exactly_ the same way in your other class?
-	 * Don't forget to `git commit` whenever you get something to work.
-	 * Don't skip using `checkstyle`. If you've been using it as recommended, 
-	   you should start to notice how many fewer fixes you're having to make
-	   to keep your code in valid style.
-   - [ ] Write and test the copy constructor. You can very likely implement it
-         using some of your other methods.	   
-
-1. Implement `BaseStringList` (Suggested Deadline: Thursday, Mar 11th):
-   - [ ] Now that you have `ArrayStringList` and `LinkedStringList` working, it will likely be easier to understand how to
-      write the other methods in `BaseStringList`. While writing each method, be sure to use the
-      methods you implemented in the children. The beauty of having the abstract parent is that we only have to write
-      these methods once and they will work on objects of any child type! Remember, the parent class does not need to understand
-      the underlying data structure (array) in this case. It just needs to call the appropriate methods to
-      implement its actions.
-   - [ ] Test, run `checkstyle`, and commit often while working on these methods.
-     	 
-1. Final Run-through (Suggested Deadline: Friday, Mar 12th):
+1. Final Run-through:
    - [ ] Thoroughly test all of your methods on objects of both `ArrayStringList` and `LinkedStringList`.
    - [ ] Remember to run `check1302` often and commit changes as you fix bugs.
    - [ ] Your driver program does not need to be submitted. If you choose to submit it, you must make sure it compiles and passes
          the checkstyle audit.
 	 
-**We very much appreciate any and all feedback you might have for this section.**
-Please don't hesitate to send us a private piazza message with suggestions on
-how to make it better after you complete your project. 
-
 # Appendix - FAQ
 
 For our responses to frequently asked questions, please refer to 
