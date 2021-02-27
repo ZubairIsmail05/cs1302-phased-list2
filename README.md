@@ -74,37 +74,24 @@ command while inside of your project directory.
 
 ## Project Description
 
-In this project, you will be providing two different implementations of
-a `StringList` interface, which defines different operations that one
-should be able to do with a *list of strings*. A list is simply an object that represents 
-an ordered collection of elements. The list implementation can decide how the
-elements are stored internally so long as users are able to interact with
-those elements via the methods defined in the interface. In this way, a list
-is an example of an *abstract data type* (ADT). To put it another way: while 
-the implementor needs to understand the specific details of the implementation
-(in order to write the code to make it happen), the user of a list does not. 
-The users simply interact with objects of the list implementation through
-the methods defined in the interface. 
+You will be extending the previous phase of the 
+[phased list](https://github.com/cs1302uga/cs1302-phased-list/blob/main/README.md)
+project by adding new functionality (methods) to your classes. In this project, your `BaseStringList`
+class will implement the `FancyStringList` interface which is an extension of the `StringList` interface
+implemented in phase 1. 
 
-**In order to truly understand this project,**  you must take a step back and think about how 
-a list object and its storage are separate things. A list uses its storage to actually store 
-its elements. For example, the size of a list does not have to be the same as the size of its 
-storage, although the storage is likely at least as big as the list. For example, say you have
-created a shopping list with 5 items on it. You would say that there are five items on your list.
-If the list is implemented as a class in Java, you might have some internal storage (say, an array) 
-that can hold more than five items. From the outside perspective, the list still contains 5 
-elements even though the internal storage may be larger. The internal array is hidden and is of no
-concern to the user of the class.
-
-Each implementation of the `StringList` interface will be a concrete class with specific functional
-and non-functional requirements. These classes need to implement `StringList`via a common abstract 
-parent class.
-
-For this project, you will *NOT* have access to the `.java` files for the
-interface. Instead, you will have access to the generated API documentation
-for the [`StringList` interface](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/cs1302/adt/StringList.html).
+You are required to update your two different classes that
+implement the same interface via a common abstract parent. While the specific 
+details are listed later in this document, the following diagram illustrates the 
+general relationship between your classes and the interface. The package `cs1302.adt`
+is provided for you in the `phase2.jar` file which is included in the download for the
+project (details later). You do not have access to the source
+code for classes in `cs1302.adt`. However, you do have access to the _byte code_ and the generated API documentation
+for the [`FancyStringList` interface](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/2/cs1302/adt/FancyStringList.html).
 Implementors should make sure that each method functions or behaves as described
 by the interface's API documentation.
+
+![UML Diagram 2](phase2.png)
 
 Implementors are always free to implement additional methods in addition
 to the ones defined by the interface. However, they should not assume that
@@ -120,7 +107,7 @@ contains some suggestions on how to work through the project from start to finis
 
 * [Interfaces Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/interfaces/interfaces.md)
 * [ADTS and Lists Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/adt-and-links/adt-and-links.md)
-* [API Documentation for Phase 1 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/1/index.html)
+* [API Documentation for Phase 2 Starter Code](https://webwork.cs.uga.edu/~mepcott/cs1302-phased-list/2/index.html)
 
 ## Project Requirements & Grading
 
@@ -133,21 +120,9 @@ A functional requirement is *added* to your point total if satisfied.
 There will be no partial credit given for visual inspection of your code. 
 Points are assigned for each test case that executes properly.
 
-For this project, you are required to create two different classes that
-implement the same interface via a common abstract parent. While the specific 
-details are listed later in this document, the following diagram illustrates the 
-general relationship between your classes and the interface. The package `cs1302.adt`
-is provided for you in the `phase1.jar` file which is included in the download for the
-project (details later). You do not have access to the source
-code for classes in `cs1302.adt`. However, you do have access to the _byte code_ and the API
-documentation website. You will need to use both `StringList` and `Node` in your code since `BaseStringList` 
-depends on `StringList` (it implements it) and `LinkedStringList` depends on `Node`.
-
-![UML Diagram 1](phase1.png)
-
 The specific requirements for each class are presented below.
 
-* **`BaseStringList`:** Create the abstract `cs1302.p2.BaseStringList` class such that it properly
+* **`BaseStringList`:** Update your abstract `cs1302.p2.BaseStringList` class such that it properly
   implements a subset of the abstract methods of `StringList`. Since `BaseStringList` is abstract, it is
   not mandatory to implement all methods of `StringList` within this class. The exact list of methods this class
   must implement are listed in the method section for `BaseStringList` in the provided UML diagram above.
@@ -164,75 +139,38 @@ The specific requirements for each class are presented below.
     all of you spend some time trying to ensure that `ArrayStringList` and `LinkedStringList` only contain the
     methods that absolutely need to be implemented in the child classes!
   
-* **`ArrayStringList`:** Create the `cs1302.p2.ArrayStringList` class such
+* **`ArrayStringList`:** Update your `cs1302.p2.ArrayStringList` class such
   that it properly extends `cs1302.p2.BaseStringList` and fully implements
-  the `cs1302.adt.StringList` interface with additional requirements listed below.
+  the `cs1302.adt.FancyStringList` interface with additional requirements listed below.
 
   * You must explicitly define and document a default constructor for this class. 
-    The initial size of an `ArrayStringList` is `0` regardless of the list's
-    underlying storage--remember, the list's internal storage and the list 
-    itself are two different things. Here is the signature:
-	
-    ```java
-    public ArrayStringList();
-    ```
+    The implementation of this constructor should not change for this phase.
 
-<!--  * You must explicitly define and document a copy constructor for this class.
+  * You must explicitly define and document a copy constructor for this class.
     It should make the new list a deep copy of the other list. Therefore, the initial 
-    size and element values of the new list should be the other list. The other
-    list can be any implementation of the `StringList` interface. Here is
+    size and element values of the new list should be copied from the other list. The other
+    list can be any implementation of the `StringList` interface (Yes, you could pass in
+    a reference to a `LinkedStringList` object and it would still work properly). Here is
     the signature:
 	
     ```java
     public ArrayStringList(StringList other);
     ```
--->
 
   * Over the lifetime of an `ArrayStringList` object, its internal storage may
-    change in order to accomodate more list elements. When your code increases
-    the size of an `ArrayStringList` object's internal array storage, 
-    **you should actively avoid: i) increasing the array size by one; and ii)
-    doubling the size of the array.** Increasing by one is wasteful as it requires making
-    a new array and copying over all elements every time an item is added. Doubling the size
-    of the array may be wasteful at large sizes as there may be many indeces that contain `null`.
-    Somewhere in between is more reasonable (increasing by 50%? increasing by 25%? We'll leave
-    the details up to you). Furthermore, **you should not set the initial array size to `0` or to the
-    largest number that is allowed.** 
+    change in order to accomodate more list elements. The rules regarding updating the internal
+    array size for an `ArrayStringList` object are not changed in phase 2.
 	
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
 
-<!--
-  * **Extra Credit (5 points):** Override the `iterator()` method for your
-    `ArrayStringList` class as described in the `StringList` interface. This _may_ 
-    require you to create an additional class that implements another interface.
-    Some web searching might recommend an anonymous inner class. Please do not do this.
-    If you choose to do this extra credit, then you should create a regular class
-    that properly implements the desired interface. 
-    In addition to properly overriding `iterator()`, to receive points for this 
-    extra credit, you must include a file called `EXTRA.md` in your immediate project 
-    directory and place the text `[EC2]` on a single line within the file. In this
-    file, you should have one line for each extra credit that you want the grader
-    to check. 
-
-    **NOTE:** You do not need to implement the `iterator()` method if you
-    are not doing the extra credit.
--->
-
 * **`LinkedStringList`:** Create the `cs1302.p2.LinkedStringList` class such
   that it properly extends `cs1302.p2.BaseStringList` and fully implements 
-  the `cs1302.adt.StringList` interface with additional requirements listed below. 
+  the `cs1302.adt.FancyStringList` interface with additional requirements listed below. 
 
-  * You must explicitly define and document a default constructor for this class. 
-    The initial size of a `LinkedStringList` is `0` regardless of the list's
-    underlying storage--remember, the list's internal storage and the list 
-    itself are two different things. Here is the signature:
-	
-    ```java
-    public LinkedStringList();
-    ```
+  * You must explicitly define and document a default constructor for this class.
+    The implementation of this constructor should not change for this phase.
 
-<!--
   * You must explicitly define and document a copy constructor for this class.
     It should make the new list a deep copy of the other list. Therefore, the initial 
     size and element values of the new list should be the other list. The other
@@ -242,27 +180,9 @@ The specific requirements for each class are presented below.
     ```java
     public LinkedStringList(StringList other);
     ```
--->
 
   * There is a requirement related to this class's storage included
     in the [Absolute Requirements](#absolute-requirements) section.
-
-<!--
-  * **Extra Credit (5 points):** Override the `iterator()` method for your
-    `LinkedStringList` class as described in the `StringList` interface. This _may_ 
-    require you to create an additional class that implements another interface.
-    Some web searching might recommend an anonymous inner class. Please do not do this.
-    If you choose to do this extra credit, then you should create a regular class
-    that properly implements the desired interface. 
-    In addition to properly overriding `iterator()`, to receive points for this 
-    extra credit, you must include a file called `EXTRA.md` in your immediate project 
-    directory and place the text `[EC2]` on a single line within the file. In this
-    file, you should have one line for each extra credit that you want the the grader
-    to check. 
-
-    **NOTE:** You do not need to implement the `iterator()` method if you
-    are not doing the extra credit.
--->
 
 * **(100 points) Test Cases**: The bulk of this project will be graded
   based on approximately 50 test cases, each worth approximately 2 points. 
@@ -321,22 +241,17 @@ made to modify your submission to evaluate other requirements.
   directory `cs1302-phased-list`:
   
   ```
-  $ javac -d bin -cp phase1.jar src/cs1302/p2/BaseStringList.java
+  $ javac -d bin -cp phase2.jar src/cs1302/p2/BaseStringList.java
   ```
   
   Remember, when you compile `.java` files individually, there might be 
   dependencies between the files. In such cases, the order in which you
   compile the code matters. Also, if more than one default package is needed
-  (e.g., `phase1.jar` and some other directory like `bin`), then a colon `:` 
+  (e.g., `phase2.jar` and some other directory like `bin`), then a colon `:` 
   can be used to separate each path in a list of multiple paths supplied
-  to `-cp` (e.g., `-cp phase1.jar:bin`). Since `ArrayStringList` and `LinkedStringList`
-  depend on files in `phase1.jar` and `BaseStringList` (in `bin`), we need
-  both to be on the classpath as follows:
-
-  ```
-  $ javac -cp bin:phase1.jar -d bin src/cs1302/p2/ArrayStringList.java
-  $ javac -cp bin:phase1.jar -d bin src/cs1302/p2/LinkedStringList.java
-  ```
+  to `-cp` (e.g., `-cp phase2.jar:bin`). Since `ArrayStringList` and `LinkedStringList`
+  depend on files in `phase2.jar` and `BaseStringList` (in `bin`), we need
+  both to be on the classpath as we did in phase 1.
   
 * __Development Environment:__ This project must be implemented 
   in Java 11, and it *must compile and run* correctly on Odin using the specific
@@ -388,7 +303,7 @@ made to modify your submission to evaluate other requirements.
   `ArrayStringList` pointing to `LinkedStringList` or vise-versa.
   
   ```
-  $ jdeps -v -cp phase1.jar bin
+  $ jdeps -v -cp phase2.jar bin
   ```
 
 ### Grading
@@ -468,7 +383,7 @@ public class Driver {
 
 Run public test cases for the cs1302-phased-list project. This program assumes
 that your code compiles correctly, the default location for compiled code
-is 'bin', and 'phase1.jar' is in the current directory.
+is 'bin', and 'phase2.jar' is in the current directory.
 
 Options:
     -a | --ArrayStringList     Check and test cs1302.p2.ArrayStringList
@@ -673,119 +588,9 @@ how to make it better after you complete your project.
 
 # Appendix - FAQ
 
-Below are some frequently asked questions related to this project.
-   
-1. **<a id="faq-uoe"/>Can I technically implement the methods first before I implement them correctly?**
+For our responses to frequently asked questions, please refer to the 
 
-   You may wish to write out the method signatures for the methods you are
-   implementing from the interface with empty bodies in an attempt to get started.
-   You will quickly discover that the methods that have a non-void return
-   value actually need to return something. If you don't put a return statement,
-   then this complicates trying to compile and test one method at a time.
-   
-   It is possible to _temporarily_ include a `throw` statement in the method
-   until you commit to writing the return statement. I reccommend throwing
-   an instance of [`UnsupportedOperationException`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html)
-   if you choose to do this. For example, you might write something like this for the `get(int)`
-   method:
-   
-   ```java
-   public String get(int index) {
-       throw new UnsupportedOperationException("not yet implemented");
-   } // get
-   ```
-   
-1. **<a id="test-exceptions"/>How can I test that my methods throw the exceptions?**
-
-   In this project, you're not explicitly tasked with handling exceptions; instead, you're
-   tasked with making sure that they happen when they're supposed to happen. When testing
-   your methods, you will want to make sure that one of things you check is that your
-   methods do, in fact, throw the exceptions when they're expected to per the API documentation.
-   
-   Here is an example of a test method you might write to test whether or not your `add(int, String)`
-   method thows an `IndexOutOfBoundsException` when a negative value is supplied for the `index`
-   parameter:
-   
-   ```java
-   public static void testAddNegative(StringList list) {
-       System.out.print("testAddNegative: ");
-       try {
-           list.add(-5, "hello");
-           System.out.println("FAIL: expected IOOB; however, no exception was encountered");
-       } catch (IndexOutOfBoundsException ioob) {
-           System.out.println("PASS: expected IOOB; IOOB was encountered");
-       } catch (Throwable e) {
-           System.out.println("FAIL: expected IOOB, but got " + e);
-       } // try
-   } // testAddNegative
-   ```
-   
-   In a driver class that you create for testing, you might write something similar to
-   the following in a method somewhere:
-   
-   ```java
-   System.out.println("ARRAY STRING LIST TESTS");
-   StringList asl = new ArrayStringList();
-   testAddNegative(asl);
-   
-   System.out.println("LINKED STRING LIST TESTS");
-   StringList lsl = new LinkedStringList();
-   testAddNegative(lsl);
-   ```
-   
-   We reccommend that you further break up your test code into methods in order to
-   reduce the redundancy you see in the example above. Your test code does not need
-   to look like what we provided; it's just an illustrative example.
-
-1. **What is `phase1.jar`?**
-
-   In Java, `.jar` files are Java™ Archive (JAR) files that bundle multiple files into a single 
-   compressed file. Typically a JAR file contains the package directories and `.class` files
-   for a library. This is just like the `bin` directory that you are used to, except it's all
-   bundled into a single file. For example, the `phase1.jar` file contains the package directories
-   and `.class` files for `cs1302.adt.StringList`. If you are in the same directory as
-   `phase1.jar`, then you can use the following command to take peek into the archive:
-   
-   ```
-   $ jar -tf phase1.jar
-   ```
-   
-   You should notice that the top-level directory in the JAR file is `cs1302`, which means that
-   the JAR file itself can serve as the default package for compiled code--this is why we
-   use with `-cp` in examples given elsewhere in this project description.
-
-1. **Why doesn't `{@inheritDoc}` seem to work (and other Javadoc-related questions)?** 
-
-   It doesn't work because the `javadoc` tool requires the source code in order to automatically
-   pull the text of comments from supertypes when applicable. **We did not provide you with the
-   source code for the interface,** so this is working as intended. **However,** you can use the
-   `javadoc1302` command (only available on Odin) along with the `--StringList.java` option
-   instead of the usual `javadoc` command to give the Javadoc tool access to the source code 
-   it needs to inherit the documentation.
-   
-   An example of the `javadoc1302` command is provided below; see the note below the example if you 
-   have problems running the command. The `USUAL_JAVADOC_OPTIONS_HERE` part might be replaced with 
-   options like `-d doc`, `-sourcepath src`, `-subpackages cs1302`, etc., as usual. Here is the
-   example:
-   
-   ```
-   $ javadoc1302 --StringList.java \
-     USUAL_JAVADOC_OPTIONS_HERE \
-     -classpath phase1.jar \
-     -link https://docs.oracle.com/en/java/javase/11/docs/api/
-   ```
-   
-   **NOTE:** The command presented above is a mult-line command since it's so long. There is a single
-   space before the `\` at the end of the first two lines. When typing this out, you should type a
-   single space followed by `\`, then immediately press your `RET` key to continue to the next line.
-   If typed correctly, you will see a `>` on the next line and you can continue typing the command.
-   The `\` and `>` characters will NOT be part of the command when you do your final press of the 
-   `RET` key. 
-   
-   **SUGGESTION:** **Do NOT manually copy the entire comment and parameter details from the API website.**
-   Instead, include a summary sentence and `{@inheritDoc}` to make it clear to readers of the source
-   code that your intent is to inherit the documentation. An example of this can be found in the
-   style guide, [here](https://github.com/cs1302uga/cs1302-styleguide#missingjavadocmethod).
+(Phase 1 FAQ)[https://github.com/cs1302uga/cs1302-phased-list/blob/main/README.md#appendix---faq]
    
 Have a question? Please post it on the course Piazza.
 
