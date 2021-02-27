@@ -590,7 +590,7 @@ how to make it better after you complete your project.
 
 For our responses to frequently asked questions, please refer to the 
 
-(Phase 1 FAQ)[https://github.com/cs1302uga/cs1302-phased-list/blob/main/README.md#appendix---faq]
+[Phase 1 FAQ](https://github.com/cs1302uga/cs1302-phased-list/blob/main/README.md#appendix---faq)
    
 Have a question? Please post it on the course Piazza.
 
