@@ -444,7 +444,7 @@ of steps that you may need to take to complete the project.
    - [ ] For each method in the interface, make sure you understand how to call each method and what a user
          expects to happen when calling that method on an object of an implementing class. For example, what 
 	 would occur if the driver program executed the line `sl.append("end")` on a preexisting object of
-	 a class that implements `StringList`? 
+	 a class that implements `FancyStringList`? 
    - [ ] For each method in the interface, try to write down what you
          think the basic steps need to be in order to produce the desired outcome.
 	 * Try to keep it high level. If the steps that you write down sound like they
@@ -484,7 +484,7 @@ of steps that you may need to take to complete the project.
 	 * Not only should you implement these methods, but **you should test them too**.
 	   Add code to your driver program that creates a list object, calls each methods, 
 	   and make sure that they work. When you create a test method, have the method
-	   perform it's test on a `StringList` instead of an `ArrayStringList`. That
+	   perform it's test on a `FancyStringList` instead of an `ArrayStringList`. That
 	   way, you'll know that it works from the perspective of the interface.
 	 * When testing, you should rerun all previous tests and make sure they still
 	   work. This iterative process of testing code is sometimes called
