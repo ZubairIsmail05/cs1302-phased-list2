@@ -72,7 +72,7 @@ then you can update your copy of the project using the <code>$ git pull</code>
 command while inside of your project directory.
 
 * **2021-03-20-SAT:** Updated `FancyOracleStringList` in `phase2.jar` to fix a potential
-  but in `reverse` and `append`. Students can use `git pull origin main` to get an
+  bug in `reverse` and `append`. Students can use `git pull origin main` to get an
   updated copy of `phase2.jar` or use `wget`
   with [this URL](https://github.com/cs1302uga/cs1302-phased-list2/raw/main/phase2.jar).
 
