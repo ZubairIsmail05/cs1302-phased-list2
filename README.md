@@ -416,7 +416,7 @@ then the name of your project directory is likely `cs1302-phased-list`.
 While in your project's parent directory, execute the following command:
 
 ```
-$ submit cs1302-phased-list csci-1302
+$ submit cs1302-phased-list2 csci-1302
 ```
 
 If you have any problems submitting your project then please send a private
