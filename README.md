@@ -127,8 +127,8 @@ Points are assigned for each test case that executes properly.
 The specific requirements for each class are presented below.
 
 * **`BaseStringList`:** Update your abstract `cs1302.p2.BaseStringList` class such that it properly
-  implements a subset of the abstract methods of `StringList`. Since `BaseStringList` is abstract, it is
-  not mandatory to implement all methods of `StringList` within this class. The exact list of methods this class
+  implements a subset of the abstract methods of `FancyStringList`. Since `BaseStringList` is abstract, it is
+  not mandatory to implement all methods of `FancyStringList` within this class. The exact list of methods this class
   must implement are listed in the method section for `BaseStringList` in the provided UML diagram above.
   Remember, since `BaseStringList` is an abstract parent to both `ArrayStringList` and `LinkedStringList`,
   it's methods must be implemented without reference to the underlying data structure. In other words,
