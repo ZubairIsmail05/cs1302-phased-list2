@@ -235,14 +235,14 @@ made to modify your submission to evaluate other requirements.
 
 * **Project Directory Structure:** <a id="struct"/>The location of the default
   package for the source code should be a direct subdirectory of
-  `cs1302-phased-list` called `src`. When the project is compiled,
+  `cs1302-phased-list2` called `src`. When the project is compiled,
   the `-d` option should be used with `javac` to make the default package
-  for compiled code a direct subdirectory of `cs1302-phased-list`
+  for compiled code a direct subdirectory of `cs1302-phased-list2`
   called `bin`.
 
   If you follow this structure, then you would type the following to compile
   `BaseStringList.java` to the `bin` directory, assuming you are in the top-level project
-  directory `cs1302-phased-list`:
+  directory `cs1302-phased-list2`:
 
   ```
   $ javac -d bin -cp phase2.jar src/cs1302/p2/BaseStringList.java
@@ -327,7 +327,8 @@ $ git clone --depth 1 https://github.com/cs1302uga/cs1302-phased-list2.git
 
 This should create a directory called `cs1302-phased-list2` in
 your present working directory that contains a clone of the
-project's respository. Take a look around.
+project's respository. We recommend copying the code from your phase 1 directory (`cs1302-phased-list`)
+into this newly created directory.
 
 If any updates to the project files are announced by your instructor, you can
 merge those changes into your copy by changing into your project's directory
@@ -412,7 +413,7 @@ You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
 are on `odin.cs.uga.edu`. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document,
-then the name of your project directory is likely `cs1302-phased-list`.
+then the name of your project directory should be `cs1302-phased-list2`.
 While in your project's parent directory, execute the following command:
 
 ```
