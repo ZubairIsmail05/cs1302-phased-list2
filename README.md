@@ -417,7 +417,7 @@ then the name of your project directory should be `cs1302-phased-list2`.
 While in your project's parent directory, execute the following command:
 
 ```
-$ check1302 cs1302-phased-list2
+$ find cs1302-phased-list2 -type f -name "*.java" | xargs check1302
 ```
 
 If there are style guide violations, then fix them and retest your code! Once
