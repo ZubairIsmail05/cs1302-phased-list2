@@ -184,7 +184,7 @@ The specific requirements for each class are presented below.
     in the [Absolute Requirements](#absolute-requirements) section.
 
 * **(100 points) Test Cases**: The bulk of this project will be graded
-  based on approximately 50 test cases, each worth approximately 2 points.
+  based on 50 or more test cases, each worth the same amount of points.
   This is the same as someone using the classes you wrote based purely on
   the interface definitions. If you implement the interface correctly,
   then you should pass the associated test cases.
