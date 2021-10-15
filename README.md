@@ -15,8 +15,8 @@ perform their final submission via the `submit` command before the date/times li
 below automatically receive the associated Submission-Based (SB) extra credit. The
 late penalty does not start applying until after the final date listed.
 
-* **FRI 2021-11-05 (Nov 05) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2021-11-06 (Nov 06) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **FRI 2021-11-05 (Nov 05) @ 11:55 PM EST (`+20` SB Extra Credit)**
+* **SAT 2021-11-06 (Nov 06) @ 11:55 PM EST (`+10` SB Extra Credit)**
 * **SUN 2021-11-07 (Nov 07) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Read the entirety of this file before beginning your project.**
@@ -111,7 +111,7 @@ contains some suggestions on how to work through the project from start to finis
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the
-highest possible grade is 110 (due to extra credit).
+highest possible grade is 120 (due to extra credit).
 
 ### Functional Requirements
 
