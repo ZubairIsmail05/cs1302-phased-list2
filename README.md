@@ -1,11 +1,11 @@
 # CSCI 1302 - Phased List (Phase 2) v2021.sp
 
-![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
+![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
 
 ![Unrelated image from page 177 of "Punch" (1841)](https://i.imgur.com/7TdqL1v.jpg)
 
 This document contains the description for Phase 2 of the List ADT
-project assigned to the students in the Spring 2021 CSCI 1302 classes
+project assigned to the students in the Fall 2021 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -70,11 +70,6 @@ to the copyright notice and licensing information at the bottom of this document
 If there has been an update and you have already cloned the project to Odin,
 then you can update your copy of the project using the <code>$ git pull</code>
 command while inside of your project directory.
-
-* **2021-03-20-SAT:** Updated `FancyOracleStringList` in `phase2.jar` to fix a potential
-  bug in `reverse` and `append`. Students can use `git pull origin main` to get an
-  updated copy of `phase2.jar` or use `wget`
-  with [this URL](https://github.com/cs1302uga/cs1302-phased-list2/raw/main/phase2.jar).
 
 ## Project Description
 
