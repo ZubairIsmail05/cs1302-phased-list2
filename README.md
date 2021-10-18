@@ -1,4 +1,4 @@
-# CSCI 1302 - Phased List (Phase 2) v2021.sp
+# CSCI 1302 - Phased List (Phase 2) v2021.fa
 
 ![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Fall%202021-blue)
 
