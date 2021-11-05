@@ -341,9 +341,9 @@ your instructor.
 You are responsible for implementing test cases to test your `ArrayStringList` and `LinkedStringList` classes. There are
 a few examples of test cases provided in the checklist and FAQ sections below.
 
-Additionally, we have provided an oracle class (`cs1302.oracle.OracleStringList`) that you can instantiate and use
+Additionally, we have provided an oracle class (`cs1302.oracle.FancyOracleStringList`) that you can instantiate and use
 in your driver program. The oracle will allow you to run test cases that you write using a trusted implementation of
-`StringList` so you can compare the oracle output to the output of your `StringList` implementations.
+`FancyStringList` so you can compare the oracle output to the output of your `FancyStringList` implementations.
 
 Here is an example `Driver` class that us set up to run the test cases with all three implementation. You would just need
 to uncomment the implementation you wanted to use:
@@ -351,15 +351,15 @@ to uncomment the implementation you wanted to use:
 ```java
 package cs1302.p2;
 
-import cs1302.adt.StringList;
-import cs1302.oracle.OracleStringList;
+import cs1302.adt.FancyStringList;
+import cs1302.oracle.FancyOracleStringList;
 
 public class Driver {
     public static void main(String[] args) {
-        StringList sl;
+        FancyStringList sl;
 
         // To test what the output is for your code, you can use ArrayStringList or LinkedStringList:
-	// sl = new OracleStringList(); // uncomment to run the test cases using the oracle.
+	// sl = new FancyOracleStringList(); // uncomment to run the test cases using the oracle.
 	// sl = new ArrayStringList(); // uncomment to run the test cases using your array implementation
 	// sl = new LinkedStringList(); // uncomment to run the test cases using your linked implementation.
 
