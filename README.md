@@ -132,7 +132,7 @@ The specific requirements for each class are presented below.
 
   * **Note:** The methods that are listed in the UML diagram in `BaseStringList` must be implemented
     in that class. You are not allowed to move any of them into `ArrayStringList` or `LinkedStringList`.
-    You may, however, find that you can more one or more methods from `ArrayStringList` and `LinkedStringList`
+    You may, however, find that you can move one or more methods from `ArrayStringList` and `LinkedStringList`
     up into `BaseStringList`. Moving methods up is allowed. In fact, it is encouraged. Any method that you can
     move up only has to be written once! However, accomplishing this will require some thought. We hope that
     all of you spend some time trying to ensure that `ArrayStringList` and `LinkedStringList` only contain the
